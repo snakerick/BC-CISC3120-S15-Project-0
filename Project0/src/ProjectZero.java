@@ -1,47 +1,55 @@
-/*
- * Ricky Cai
- * CS3120 THURSDAY Evening.
- */
-import java.util.Scanner;
 
+
+import java.util.Scanner;
+/**
+ * 
+ * @author RICKY
+ * @version 1
+ */
 public class ProjectZero {
+/**
+ * 
+ * @param args Regular Main Functions, adds 2 numbers together
+ */
 
 	public static void main(String[] args) {
-		//Declaring Variables
+		//Created Scanner call stdin
 		Scanner stdin;
-
-		//Declaring Scanner to recieve input
 		stdin = new Scanner( System.in );
 		
-		//The program will assume that the user will enter "INT" first
+		//User enters two number it assumes that it is an INT
 		try { 
 			int num1,num2, sum;
-			//Print Statement for user
+			
 			System.out.print("Enter two numbers: ");
-
-			//Storing the numbers and doing calculation for sum
+			
+			//If user enter two INT the number get store in num1 and num2
 			num1 = stdin.nextInt();
 			num2 = stdin.nextInt();	
+			
+			//The sum is then calculated.
 			sum = num1 + num2;
 			
 			System.out.print("The sum of " + num1 + " and " + num2 + " is: " + sum);
-		
-			
 		} 
 		
-		//If the numbers enter is not Int's it will do the catch and use double instead.
+		//If the number isn't an INT its assume that its a double.
 		catch (java.util.InputMismatchException e) {
 			
-			//Declare variables for Double and calculating for sum
+			//Stores the numbers in num1 and num2
 			double num1,num2,sum;
 			num1 = stdin.nextDouble();
 			num2 = stdin.nextDouble();
+			
+			//Calculate the sum of both numbers
 			sum = num1 + num2;
 			
 			System.out.print("The sum of " + num1 + " and " + num2 + " is: " + sum);
-		} 
-		//Finally is used to close the stdin because Finally always executes no matter what.
+		} 		
+		
+		//Finally happens regardless, and the statement closes the scanner
 		finally { 
+			//Closes the scanner
 			stdin.close(); 
 		}
 	}
